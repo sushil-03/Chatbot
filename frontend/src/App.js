@@ -5,7 +5,7 @@ import Login from "./component/login";
 import Register from "./component/register";
 function App() {
   return (
-    <div className="bg-purple-500 w-screen h-screen">
+    <div>
       <React.Fragment>
         <Routes>
           <Route exact path="/" element={<Chat />} />

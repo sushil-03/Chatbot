@@ -10,7 +10,216 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.react-chatbot-kit-chat-container {
+  margin: 40px 0;
+  position: fixed;
+  left: 40px;
+  bottom: 55px;
+  z-index: 9999;
+  box-shadow: 5px 5px 13px rgba(91, 81, 81, 0.4);
+  background-color: white;
+  border-radius: 2%;
+}
+.react-chatbot-kit-chat-header {
+  font-family: "Roboto Slab", serif;
+  padding: 10px 20px 10px 20px;
+  width: 100%;
+  border-bottom: 1px solid grey;
+  font-weight: 500;
+  height: 40px;
+  justify-content: center;
+}
+/* .react-chatbot-kit-chat-bot-avatar-letter {
+  background-image: url();
+} */
+.react-chatbot-kit-chat-input-form {
+  position: relative;
+}
+
+.app-chatbot-container {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 40px;
+  bottom: 55px;
+  z-index: 9999;
+  box-shadow: 5px 5px 13px rgba(91, 81, 81, 0.4);
+  border-radius: 5px;
+  /* border: 2px solid red; */
+}
+.react-chatbot-kit-chat-inner-container {
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+.app-chatbot-button-icon {
+  fill: #fff;
+}
+.react-chatbot-kit-chat-message-container {
+  /* background-image: url("../assets/wall2.jpg"); */
+  height: 420px;
+  padding: 10px;
+  overflow: scroll;
+}
+.react-chatbot-kit-chat-input-container {
+  /* border-top: 2px solid grey; */
+  width: 100%;
+  bottom: 100px;
+  position: fixed;
+}
+.react-chatbot-kit-chat-input-form {
+  /* width: 407px; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation-name: example;
+  animation-duration: 4s;
+}
+@keyframes example {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 407px;
+  }
+}
+.react-chatbot-kit-chat-input {
+  background-color: rgb(233, 226, 226);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  outline: none;
+  border: none;
+}
+.react-chatbot-kit-chat-btn-send {
+  height: 35px;
+  width: 35px;
+}
+.react-chatbot-kit-chat-btn-send-icon {
+  border-radius: 50%;
+  border: 2px solid black;
+}
+.react-chatbot-kit-user-avatar-icon {
+  display: none;
+}
+
+.react-chatbot-kit-chat-bot-avatar {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  background-color: gray;
+  border-radius: 50%;
+  text-align: center;
+  position: inline-block;
+  color: white;
+  font-family: "Roboto Slab", serif;
+  padding-top: 5px;
+}
+.react-chatbot-kit-chat-bot-message {
+  /* margin: 10px 0px 10px 0px; */
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 0 10px 10px 10px;
+}
+
+.react-chatbot-kit-user-chat-message {
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 10px 0px 10px 10px;
+  /* position: inline-block; */
+  /* position: absolute; */
+  background-color: #1f91e7;
+  /* text-align: right; */
+  /* max-width: max-content; */
+  /* margin-left: cal(400px-max-content) px; */
+  /* right: 10px; */
+}
+
+.react-chatbot-kit-chat-bot-message-container {
+  width: auto;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+/* sss */
+.options {
+  font-family: "Roboto Slab", serif;
+  padding-bottom: 15px;
+}
+
+.options-header {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.option-item {
+  width: 50%;
+  padding: 8px 15px;
+  border: 1px solid #2898ec;
+  border-radius: 25px;
+  color: #1f91e7;
+  font-size: 0.9rem;
+  margin-left: 25%;
+  margin-top: 5px;
+  box-shadow: inset 0px 0px 0px #2273c4;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.option-item:hover {
+  box-shadow: inset 195px 0px 0px #2273c4;
+  color: #ffffff;
+}
+/* Login */
+.container1 {
+  background-color: #dcdfff;
+}
+
+.page {
+  background-color: #fff;
+  /* border: 2px solid black; */
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.left {
+  margin-left: 4rem;
+  margin-top: 2rem;
+}
+
+h2 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+  font-size: xx-large;
+}
+button {
+  background-color: #5138ee;
+}
+.img {
+  background-image: url("../assets/login.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.test {
+  background-image: url("../assets/test.gif");
+}
+.content {
+  color: white;
 }

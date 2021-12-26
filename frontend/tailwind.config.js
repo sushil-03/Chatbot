@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         redressed: ["redressed"],
+        roboto: ["roboto"],
       },
     },
   },
