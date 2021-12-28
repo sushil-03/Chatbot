@@ -34,6 +34,7 @@ const Chat = () => {
             to="/"
             className=" w-10 h-10 text-4xl mx-10 cursor-pointer"
             onClick={() => {
+              alert("Logging Out");
               navigate("/");
               localStorage.removeItem("token");
             }}

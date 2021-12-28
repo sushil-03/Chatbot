@@ -18,24 +18,30 @@ const Register = () => {
   const [course, setCourse] = useState("");
   const [contact, setContact] = useState("");
   const [password, setPassword] = useState("");
+  const [error, showErr] = useState(false);
   const handleSubmit = async (e) => {
     console.log("Handler entered");
     e.preventDefault();
-    const response = await axios.post("http://localhost:5001/api/register", {
-      name,
-      college,
-      collegeEmailId,
-      branch,
-      student_id,
-      semester,
-      roll,
-      course,
-      contact,
-      password,
-    });
-    // console.log(response, response.data.success);
-    if (response.data.success) {
-      showChat((chat) => !chat);
+    try {
+      const response = await axios.post("http://localhost:5001/api/register", {
+        name,
+        college,
+        collegeEmailId,
+        branch,
+        student_id,
+        semester,
+        roll,
+        course,
+        contact,
+        password,
+      });
+      if (response.data.success) {
+        alert("Registration Successfully");
+        showChat((chat) => !chat);
+      }
+    } catch {
+      alert("already");
+      showErr((err) => !err);
     }
   };
   useEffect(() => {
@@ -128,7 +134,13 @@ const Register = () => {
                   required
                   value={student_id}
                   onChange={(e) => setId(e.target.value)}
+                  error={error}
                 />
+                {error && (
+                  <div className="Error text-red-800 ml-5 font-semibold">
+                    Id Already Exist
+                  </div>
+                )}
               </div>
               <div className="semester">
                 <span className="text-sm font-semibold">Semester*</span>

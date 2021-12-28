@@ -11,23 +11,28 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [chat, showChat] = useState(false);
 
+  const [error, showErr] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:5001/api/login", {
+        student_id: id,
+        password,
+      });
 
-    const response = await axios.post("http://localhost:5001/api/login", {
-      student_id: id,
-      password,
-    });
-
-    console.log(response);
-    localStorage.setItem("token", response.data.token);
-    if (response.data.success) {
-      showChat((chat) => !chat);
+      console.log(response);
+      localStorage.setItem("token", response.data.token);
+      if (response.data.success) {
+        showChat((chat) => !chat);
+      }
+    } catch {
+      showErr((err) => !err);
     }
   };
   useEffect(() => {
     if (chat) {
-      alert("Login Successfukky");
+      alert("Login Successfully");
       navigate("/chatbot");
     }
   }, [chat]);
@@ -57,6 +62,7 @@ const Login = () => {
                 onChange={(e) => {
                   setId(e.target.value);
                 }}
+                error={error}
               />
             </div>
             <div
@@ -71,6 +77,7 @@ const Login = () => {
                 id="password"
                 placeholder="password"
                 required
+                error={error}
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}

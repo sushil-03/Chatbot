@@ -1,5 +1,4 @@
 import { createChatBotMessage } from "react-chatbot-kit";
-// import InforBot  from  "../Chatbat/InfoBot.js"
 
 // widget
 
