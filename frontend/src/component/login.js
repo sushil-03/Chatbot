@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { AiFillAliwangwang, AiOutlineCopyrightCircle } from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../Common/Input";
-const login = () => {
+import axios from "axios";
+
+const Login = () => {
+  const navigate = useNavigate();
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
+  const [chat, showChat] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await axios.post("http://localhost:5001/api/login", {
+      student_id: id,
+      password,
+    });
+
+    console.log(response);
+    localStorage.setItem("token", response.data.token);
+    if (response.data.success) {
+      showChat((chat) => !chat);
+    }
+  };
+  useEffect(() => {
+    if (chat) {
+      alert("Login Successfukky");
+      navigate("/chatbot");
+    }
+  }, [chat]);
+
   return (
     <div className="container1 w-screen h-screen  relative">
       <div className="page flex flex-row w-4/5 h-4/5 m-auto absolute">
@@ -16,28 +44,36 @@ const login = () => {
           </div>
           <h2>Login</h2>
 
-          <form action="submit" className="my-8">
+          <form onSubmit={handleSubmit} className="my-8">
             <div className="id ">
-              <span className="text-sm font-semibold ">Student Id*</span>
+              <label className="text-sm font-semibold ">Student Id*</label>
               <Input
                 type="text"
                 name=""
-                id=""
+                id="text"
+                value={id}
                 placeholder="Ex: 20011554"
                 required
+                onChange={(e) => {
+                  setId(e.target.value);
+                }}
               />
             </div>
             <div
               className="password -
             my-4"
             >
-              <span className="text-sm font-semibold">Password*</span>
+              <label className="text-sm font-semibold">Password*</label>
               <Input
-                type="text"
+                type="password"
                 name=""
-                id=""
+                value={password}
+                id="password"
                 placeholder="password"
                 required
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
             </div>
             <button
@@ -66,4 +102,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

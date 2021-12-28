@@ -7,14 +7,15 @@ router.post("/register", async (req, res) => {
   try {
     const {
       name,
-      student_id,
-      roll,
-      password,
-      semester,
-      course,
       college,
+      collegeEmailId,
       branch,
-      phone,
+      student_id,
+      semester,
+      roll,
+      course,
+      contact,
+      password,
     } = req.body;
     console.log(req.body);
     const user = await User.findOne({ student_id });
@@ -27,16 +28,17 @@ router.post("/register", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new User({
       name,
-      student_id,
-      roll,
-      password: hashedPassword,
-      semester,
-      course,
       college,
+      collegeEmailId,
       branch,
-      phone,
+      student_id,
+      semester,
+      roll,
+      course,
+      contact,
+      password: hashedPassword,
     });
-    console.log(newUser);
+    console.log("New user created", newUser);
 
     await newUser.save();
 

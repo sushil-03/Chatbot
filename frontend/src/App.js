@@ -1,16 +1,16 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Chat from "./component/Chat";
-import Login from "./component/login";
-import Register from "./component/register";
+import Login from "./component/Login";
+import Register from "./component/Register";
 function App() {
   return (
     <div>
       <React.Fragment>
         <Routes>
-          <Route exact path="/" element={<Chat />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route exact path="/" element={<Login />} />
+          <Route path="/chatbot" element={<Chat />} />
+          <Route path="/Register" element={<Register />} />
         </Routes>
       </React.Fragment>
     </div>

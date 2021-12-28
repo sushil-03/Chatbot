@@ -6,13 +6,25 @@ class MessageParser {
   parse(message) {
     message = message.toLowerCase();
 
-    // if (
-    //   message.include("options") ||
-    //   message.include("info") ||
-    //   message.include("help")
-    // ) {
-    //   return this.actionProvider.handleOptions({ withAvatar: true });
-    // }
+    if (message.includes("options") || message.includes("info")) {
+      return this.actionProvider.handleOptions({ withAvatar: true });
+    } else if (message.include("all") || message.include("details")) {
+      return this.actionProvider.handleAll({ withAvatar: true });
+    } else if (message.includes("id") || message.includes("student id")) {
+      return this.actionProvider.handleId({ withAvatar: true });
+    } else if (message.includes("roll") || message.includes("student roll")) {
+      return this.actionProvider.handleRoll({ withAvatar: true });
+    } else if (message.include("contact")) {
+      return this.actionProvider.handleContact({ withAvatar: true });
+    } else if (
+      message.includes("joke") ||
+      message.includes("jokes") ||
+      message.includes("funny")
+    ) {
+      return this.actionProvider.handleJoke();
+    } else if (message.includes("thanks") || message.includes("thank you")) {
+      return this.actionProvider.handleThanks();
+    }
 
     this.actionProvider.handleOptions({ withAvatar: true });
   }
