@@ -5,7 +5,7 @@ const GeneralOptions = (props) => {
   const options = [
     {
       name: "Show all details",
-      //   handler: props.actionProvider.handleGlobalStats,
+      handler: props.actionProvider.handleAll,
       id: 1,
     },
     {

@@ -188,6 +188,8 @@ body {
   /* background-color: rgb(12, 127, 255); */
   /* background-color: rgb(169, 184, 199); */
   background-color: lightseagreen;
+  max-width: fit-content;
+  float: right;
 }
 /* 44444444444444444444444444444444444444444444444444444444444444444444444 */
 

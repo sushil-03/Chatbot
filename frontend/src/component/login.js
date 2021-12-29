@@ -16,6 +16,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log({ id, password });
       const response = await axios.post("http://localhost:5001/api/login", {
         student_id: id,
         password,
@@ -32,10 +33,10 @@ const Login = () => {
   };
   useEffect(() => {
     if (chat) {
-      alert("Login Successfully");
+      // alert("Login Succeddssfully");
       navigate("/chatbot");
     }
-  }, [chat]);
+  }, [chat, navigate]);
 
   return (
     <div className="container1 w-screen h-screen  relative">

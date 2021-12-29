@@ -20,14 +20,17 @@ router.post("/login", async (req, res) => {
   const user = await User.findOne({ student_id });
   console.log("user", user);
   if (!user) {
-    res.status(401).send({
+    res.status(200).send({
       success: false,
       message: "No user with this id found ",
     });
   }
-  const result = bcrypt.compare(password, user.password);
+  const result = await bcrypt.compare(password, user.password);
+
+  console.log({ password, pwd: user.password, result });
+
   if (!result) {
-    return res.status(401).send({
+    return res.status(200).send({
       success: false,
       message: "Password is incorrect",
     });

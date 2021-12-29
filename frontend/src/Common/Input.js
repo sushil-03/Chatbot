@@ -4,6 +4,7 @@ function Input(props) {
   return (
     <input
       {...props}
+      error=""
       className={`block my-1 rounded-3xl p-2 text-sm border-2  outline-none  
       ${
         props.error

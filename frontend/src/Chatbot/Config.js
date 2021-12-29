@@ -27,7 +27,7 @@ let config = {
       widget: "overview",
     }),
   ],
-  // state: {},
+  state: {},
   //botAvatar
   // customComponents:{botAvatar:()=><InfoBot/>},
   widgets: [

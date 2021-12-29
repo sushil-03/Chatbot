@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Chatbot from "react-chatbot-kit";
 import Config from "../Chatbot/Config";
@@ -12,6 +12,13 @@ import Fade from "@material-ui/core/Fade";
 const Chat = () => {
   const navigate = useNavigate();
   const [showbot, toggleBot] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    console.log({ token });
+    if (token === null) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   return (
     <div className="p-4 chat w-screen h-screen">
