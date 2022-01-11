@@ -22,7 +22,6 @@ const Login = () => {
         password,
       });
 
-      console.log(response);
       localStorage.setItem("token", response.data.token);
       if (response.data.success) {
         showChat((chat) => !chat);
@@ -33,7 +32,6 @@ const Login = () => {
   };
   useEffect(() => {
     if (chat) {
-      // alert("Login Succeddssfully");
       navigate("/chatbot");
     }
   }, [chat, navigate]);
