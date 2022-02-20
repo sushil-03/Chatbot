@@ -8,14 +8,16 @@ class MessageParser {
 
     if (message.includes("options") || message.includes("info")) {
       return this.actionProvider.handleOptions({ withAvatar: true });
-    } else if (message.include("all") || message.include("details")) {
+    } else if (message.includes("all") || message.includes("details")) {
       return this.actionProvider.handleAll({ withAvatar: true });
     } else if (message.includes("id") || message.includes("student id")) {
       return this.actionProvider.handleId({ withAvatar: true });
     } else if (message.includes("roll") || message.includes("student roll")) {
       return this.actionProvider.handleRoll({ withAvatar: true });
-    } else if (message.include("contact")) {
+    } else if (message.includes("contact")) {
       return this.actionProvider.handleContact({ withAvatar: true });
+    } else if (message.includes("college")) {
+      return this.actionProvider.handleCollegeDetail({ withAvatar: true });
     } else if (
       message.includes("joke") ||
       message.includes("jokes") ||

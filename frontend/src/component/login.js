@@ -16,7 +16,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log({ id, password });
       const response = await axios.post("http://localhost:5001/api/login", {
         student_id: id,
         password,

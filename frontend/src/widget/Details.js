@@ -25,25 +25,23 @@ const Details = () => {
     getDetails();
   }, []);
   console.log("Details", details);
-  // return <div>{JSON.stringify(details)}</div>;
-  const newDetails = JSON.stringify(details);
-  console.log("-----------", newDetails);
   return (
-    <div className="stats">
+    <div className="stats mt-2">
       <div className="column-left">
         <p> Name :</p>
         <p> Student Id :</p>
         <p> Student Roll Number :</p>
         <p> Student Branch:</p>
+        <p> Semester:</p>
       </div>
 
       <div className="column-right">
         <ClipLoader color={"#fff"} loading={loading} />
-        {/* console.log('Details',newDetails); */}
         <p>{details.name}</p>
         <p>{details.student_id}</p>
         <p>{details.roll}</p>
         <p>{details.branch}</p>
+        <p>{details.semester}</p>
       </div>
     </div>
   );

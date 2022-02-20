@@ -4,7 +4,6 @@ import Chatbot from "react-chatbot-kit";
 import Config from "../Chatbot/Config";
 import MessageParser from "../Chatbot/MessageParser";
 import ActionProvider from "../Chatbot/ActionProvider";
-// import FadeIn from "react-fade-in/lib/FadeIn";
 import Fade from "@material-ui/core/Fade";
 
 // import logo from "../component/test.gif";
@@ -21,7 +20,7 @@ const Chat = () => {
   }, [navigate]);
 
   return (
-    <div className="p-4 chat w-screen h-screen">
+    <div className="p-4 chat w-screen h-screen overflow-hidden">
       {/* navbar */}
 
       <div className="heading w-full flex flex-row justify-between  align items-center">
@@ -30,7 +29,7 @@ const Chat = () => {
             chatbot.io
           </Link>
         </div>
-        <div className=" bot text-5xl text-white m-3 font-redressed flex items-center ">
+        <div className=" bot md:text-5xl text-3xl text-white m-3 font-redressed flex ">
           <p
             onClick={() => toggleBot((prev) => !prev)}
             className="cursor-pointer"
@@ -39,7 +38,7 @@ const Chat = () => {
           </p>
           <Link
             to="/"
-            className=" w-10 h-10 text-4xl mx-10 cursor-pointer"
+            className=" w-10 h-10  md:text-4xl  text-2xl mx-10 cursor-pointer"
             onClick={() => {
               alert("Logging Out");
               navigate("/");
@@ -54,7 +53,7 @@ const Chat = () => {
       {/* body */}
 
       <div className="content p-10  flex flex-row justify-center items-center">
-        <div className="left w-1/2 px-2">
+        <div className=" md:block  hidden left w-1/2 px-2">
           <p className="text-xl font-medium m-5">
             2.5 billion – that’s how many customer service hours businesses will
             save by 2023 through the adoption of chatbots, as estimated by
@@ -75,10 +74,9 @@ const Chat = () => {
             posed.
           </p>
         </div>
-        <div className="w-1/2 right mx-5 ">
+        <div className="md:w-1/2 w-full right mx-5 ">
           <div className="videoA  w-full h-full"></div>
         </div>
-        {/* <img src="{logo}" alt="loading.." /> */}
       </div>
 
       {/* Chatbot */}

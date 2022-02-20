@@ -24,16 +24,21 @@ const Details = () => {
     };
     getDetails();
   }, []);
-  console.log("Details", details);
   return (
     <div className="stats mt-2">
       <div className="column-left">
-        <p> Contact :</p>
+        <p> College Name :</p>
+        <p> Course :</p>
+        <p> Branch :</p>
+        <p> College Email Id :</p>
       </div>
 
       <div className="column-right">
         <ClipLoader color={"#fff"} loading={loading} />
-        <p>{details.contact}</p>
+        <p>{details.college}</p>
+        <p>{details.course}</p>
+        <p>{details.branch}</p>
+        <p>{details.collegeEmailId}</p>
       </div>
     </div>
   );

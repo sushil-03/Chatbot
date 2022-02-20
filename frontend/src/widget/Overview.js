@@ -10,17 +10,17 @@ const GeneralOptions = (props) => {
     },
     {
       name: "Show student id",
-      //   handler: props.actionProvider.handleLocalStats,
+      handler: props.actionProvider.handleId,
       id: 2,
     },
     {
       name: "Show contact info",
-      //   handler: props.actionProvider.handleContact,
+      handler: props.actionProvider.handleContact,
       id: 3,
     },
     {
       name: "Show college detail",
-      //   handler: props.actionProvider.handleMedicine,
+      handler: props.actionProvider.handleCollegeDetail,
       id: 4,
     },
   ];

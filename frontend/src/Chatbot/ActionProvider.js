@@ -19,7 +19,7 @@ class ActionProvider {
 
   handleAll = () => {
     console.log("handleAll");
-    const message = this.createChatBotMessage("Here are your all detail", {
+    const message = this.createChatBotMessage("Here are your all details", {
       widget: "details",
       loading: true,
       terminateLoading: true,
@@ -52,6 +52,24 @@ class ActionProvider {
     console.log("Handling Contact");
     const message = this.createChatBotMessage("Here is your Contact Info", {
       widget: "contact",
+      loading: true,
+      terminateLoading: true,
+    });
+    this.addMessageToState(message);
+  };
+  handleJoke = () => {
+    console.log("Handling Joke");
+    const message = this.createChatBotMessage("Testing Joke", {
+      widget: "joke",
+      loading: true,
+      terminateLoading: true,
+    });
+    this.addMessageToState(message);
+  };
+  handleCollegeDetail = () => {
+    console.log("Handling College Detail");
+    const message = this.createChatBotMessage("Here is your College Details", {
+      widget: "college",
       loading: true,
       terminateLoading: true,
     });

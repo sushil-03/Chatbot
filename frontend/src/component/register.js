@@ -48,7 +48,7 @@ const Register = () => {
     if (chat) {
       navigate("/chatbot");
     }
-  }, [chat]);
+  }, [chat, navigate]);
   return (
     <div className="container1 w-screen h-screen  relative">
       <div className="page flex flex-row w-4/5 h-4/5 m-auto absolute">

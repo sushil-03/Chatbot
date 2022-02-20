@@ -6,7 +6,9 @@ import Contact from "../widget/Contact";
 import Details from "../widget/Details";
 import Id from "../widget/Id";
 import Roll from "../widget/Roll";
+import Joke from "../widget/Joke.js";
 import Overview from "../widget/Overview";
+import College from "../widget/College";
 
 let config = {
   botName: "InfoBot🤖",
@@ -28,8 +30,7 @@ let config = {
     }),
   ],
   state: {},
-  //botAvatar
-  // customComponents:{botAvatar:()=><InfoBot/>},
+
   widgets: [
     {
       widgetName: "overview",
@@ -51,6 +52,14 @@ let config = {
     {
       widgetName: "contact",
       widgetFunc: (props) => <Contact {...props} />,
+    },
+    {
+      widgetName: "joke",
+      widgetFunc: (props) => <Joke {...props} />,
+    },
+    {
+      widgetName: "college",
+      widgetFunc: (props) => <College {...props} />,
     },
   ],
 };
