@@ -4,7 +4,9 @@ import { IconContext } from "react-icons/lib";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../Common/Input";
 import axios from "axios";
+import { useAlert } from "react-alert";
 const Register = () => {
+  const alert = useAlert();
   const [chat, showChat] = useState(false);
   const navigate = useNavigate();
 
@@ -20,7 +22,6 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [error, showErr] = useState(false);
   const handleSubmit = async (e) => {
-    console.log("Handler entered");
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:5001/api/register", {
@@ -36,11 +37,11 @@ const Register = () => {
         password,
       });
       if (response.data.success) {
-        alert("Registration Successfully");
+        alert.success("Registration Successfully");
         showChat((chat) => !chat);
       }
     } catch {
-      alert("already");
+      alert("Already has a id");
       showErr((err) => !err);
     }
   };
@@ -69,7 +70,7 @@ const Register = () => {
                   name=""
                   id=""
                   value={name}
-                  placeholder="name"
+                  placeholder="Name"
                   required
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -81,7 +82,7 @@ const Register = () => {
                   type="text"
                   name=""
                   id=""
-                  placeholder="college name"
+                  placeholder="College name"
                   required
                   onChange={(e) => setCollege(e.target.value)}
                 />
@@ -105,7 +106,7 @@ const Register = () => {
                   type="text"
                   name=""
                   id=""
-                  placeholder="course"
+                  placeholder="Course"
                   required
                   value={course}
                   onChange={(e) => setCourse(e.target.value)}
@@ -148,7 +149,7 @@ const Register = () => {
                   type="text"
                   name=""
                   id=""
-                  placeholder="semester"
+                  placeholder="Semester"
                   required
                   value={semester}
                   onChange={(e) => setSemester(e.target.value)}
@@ -163,7 +164,7 @@ const Register = () => {
                   type="text"
                   name=""
                   id=""
-                  placeholder="roll no."
+                  placeholder="Roll no."
                   required
                   value={roll}
                   onChange={(e) => setRoll(e.target.value)}
@@ -176,7 +177,7 @@ const Register = () => {
                   type="text"
                   name=""
                   id=""
-                  placeholder="contact"
+                  placeholder="Contact"
                   required
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
@@ -188,7 +189,7 @@ const Register = () => {
                   type="text"
                   name=""
                   id=""
-                  placeholder="password"
+                  placeholder="Password"
                   value={password}
                   required
                   onChange={(e) => setPassword(e.target.value)}

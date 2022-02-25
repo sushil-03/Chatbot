@@ -4,8 +4,9 @@ import { IconContext } from "react-icons/lib";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../Common/Input";
 import axios from "axios";
-
+import { useAlert } from "react-alert";
 const Login = () => {
+  const alert = useAlert();
   const navigate = useNavigate();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -23,6 +24,7 @@ const Login = () => {
 
       localStorage.setItem("token", response.data.token);
       if (response.data.success) {
+        alert.success("User login successfully");
         showChat((chat) => !chat);
       }
     } catch {

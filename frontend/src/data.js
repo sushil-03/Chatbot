@@ -6,6 +6,5 @@ export const getData = async () => {
     },
   });
   console.log("dddddddddddd", data);
-  //   data = await data.json();
   return data.data;
 };

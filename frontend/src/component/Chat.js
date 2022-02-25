@@ -5,10 +5,10 @@ import Config from "../Chatbot/Config";
 import MessageParser from "../Chatbot/MessageParser";
 import ActionProvider from "../Chatbot/ActionProvider";
 import Fade from "@material-ui/core/Fade";
-
 // import logo from "../component/test.gif";
-
+import { useAlert } from "react-alert";
 const Chat = () => {
+  const alert = useAlert();
   const navigate = useNavigate();
   const [showbot, toggleBot] = useState(false);
   useEffect(() => {
@@ -29,7 +29,7 @@ const Chat = () => {
             chatbot.io
           </Link>
         </div>
-        <div className=" bot md:text-5xl text-3xl text-white m-3 font-redressed flex ">
+        <div className=" bot  text-3xl text-white m-3 font-roboto flex ">
           <p
             onClick={() => toggleBot((prev) => !prev)}
             className="cursor-pointer"
@@ -38,9 +38,9 @@ const Chat = () => {
           </p>
           <Link
             to="/"
-            className=" w-10 h-10  md:text-4xl  text-2xl mx-10 cursor-pointer"
+            className=" w-10 h-10  md:text-3xl  text-2xl mx-10 cursor-pointer"
             onClick={() => {
-              alert("Logging Out");
+              alert.success("Logging Out");
               navigate("/");
               localStorage.removeItem("token");
             }}
@@ -94,12 +94,13 @@ const Chat = () => {
 
       <button
         onClick={() => toggleBot((prev) => !prev)}
-        className="bg-white w-16 h-16 rounded-full fixed flex flex-col bottom-7"
+        className="bg-transparent w-48 h-32 mt-2  rounded-full fixed flex flex-col bottom-2"
       >
-        <p className="mx-5  font-semibold">Bot</p>
-        <svg viewBox="0 0 650 512" className="mx-auto  w-10">
-          <path d="M192,408h64V360H192ZM576,192H544a95.99975,95.99975,0,0,0-96-96H344V24a24,24,0,0,0-48,0V96H192a95.99975,95.99975,0,0,0-96,96H64a47.99987,47.99987,0,0,0-48,48V368a47.99987,47.99987,0,0,0,48,48H96a95.99975,95.99975,0,0,0,96,96H448a95.99975,95.99975,0,0,0,96-96h32a47.99987,47.99987,0,0,0,48-48V240A47.99987,47.99987,0,0,0,576,192ZM96,368H64V240H96Zm400,48a48.14061,48.14061,0,0,1-48,48H192a48.14061,48.14061,0,0,1-48-48V192a47.99987,47.99987,0,0,1,48-48H448a47.99987,47.99987,0,0,1,48,48Zm80-48H544V240h32ZM240,208a48,48,0,1,0,48,48A47.99612,47.99612,0,0,0,240,208Zm160,0a48,48,0,1,0,48,48A47.99612,47.99612,0,0,0,400,208ZM384,408h64V360H384Zm-96,0h64V360H288Z"></path>
-        </svg>
+        <img
+          src="/icon.gif"
+          alt=""
+          className="z-10 absolute w-full h-full  fill-current "
+        />
       </button>
     </div>
   );
