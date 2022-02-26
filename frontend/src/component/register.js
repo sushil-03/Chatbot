@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AiFillAliwangwang, AiOutlineCopyrightCircle } from "react-icons/ai";
+import { AiFillAliwangwang } from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../Common/Input";
@@ -211,10 +211,6 @@ const Register = () => {
               <Link to="/" className="text-blue-800 hover:text-blue-500">
                 Sign In
               </Link>
-            </p>
-            <p className="flex flex-row  absolute -bottom-0 items-center text-gray-500 ">
-              <AiOutlineCopyrightCircle />
-              All right reserved
             </p>
           </div>
         </div>

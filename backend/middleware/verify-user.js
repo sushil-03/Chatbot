@@ -17,6 +17,7 @@ module.exports = async function (req, res, next) {
       message: "Unauthorise token",
     });
   }
+
   //Retreive data
   const user = await User.findById(data.user).select("-password");
   req.user = user;
