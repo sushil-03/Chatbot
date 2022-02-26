@@ -89,7 +89,7 @@ const Register = () => {
               </div>
 
               <div className="college id">
-                <span className="text-sm font-semibold">College Id*</span>
+                <span className="text-sm font-semibold">College Email Id*</span>
                 <Input
                   value={collegeEmailId}
                   type="email"

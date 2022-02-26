@@ -24,7 +24,6 @@ const Details = () => {
     };
     getDetails();
   }, []);
-  console.log("Details", details);
   return (
     <div className="stats mt-2">
       <div className="column-left">

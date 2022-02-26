@@ -1,5 +1,4 @@
 const Options = (props) => {
-  console.log("running");
   return (
     <div className="options">
       <h1 className="options-header">{props.title}</h1>

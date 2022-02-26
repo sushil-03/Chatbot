@@ -1,7 +1,6 @@
 import Options from "./Option";
 
 const GeneralOptions = (props) => {
-  console.log("running");
   const options = [
     {
       name: "Show all details",

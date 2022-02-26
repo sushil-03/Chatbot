@@ -19,7 +19,6 @@ module.exports = async function (req, res, next) {
   }
   //Retreive data
   const user = await User.findById(data.user).select("-password");
-  console.log("User :", user);
   req.user = user;
   next();
 };

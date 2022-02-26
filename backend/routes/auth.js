@@ -6,7 +6,6 @@ const jwt = require("jsonwebtoken");
 
 const verifyUser = require("../middleware/verify-user");
 router.get("/details", verifyUser, (req, res) => {
-  console.log("checking middleware");
   res.status(200).json({
     success: true,
     data: req.user,
@@ -16,9 +15,8 @@ router.get("/details", verifyUser, (req, res) => {
 //Login
 router.post("/login", async (req, res) => {
   const { student_id, password } = req.body;
-  console.log(student_id, req.body);
+
   const user = await User.findOne({ student_id });
-  console.log("user", user);
   if (!user) {
     res.status(200).send({
       success: false,
@@ -26,8 +24,6 @@ router.post("/login", async (req, res) => {
     });
   }
   const result = await bcrypt.compare(password, user.password);
-
-  console.log({ password, pwd: user.password, result });
 
   if (!result) {
     return res.status(200).send({
@@ -45,7 +41,6 @@ router.post("/login", async (req, res) => {
     const token = await jwt.sign(payload, process.env.JWT_SECRET_KEY, {
       expiresIn: "1d",
     });
-    console.log("Token ", token);
     res.send({
       success: true,
       message: "Successfully logged in",
