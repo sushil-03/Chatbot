@@ -8,7 +8,7 @@ const Details = () => {
   useEffect(() => {
     const getDetails = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/details", {
+        const response = await axios.get("/api/details", {
           headers: {
             "auth-token": localStorage.getItem("token"),
           },
