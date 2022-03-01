@@ -74,7 +74,7 @@ const Chat = () => {
             posed.
           </p>
         </div>
-        <div className="md:w-1/2 w-screen right mx-5 border">
+        <div className="md:w-1/2 w-screen right mx-5 ">
           <div className="videoA  w-full h-full"></div>
         </div>
       </div>

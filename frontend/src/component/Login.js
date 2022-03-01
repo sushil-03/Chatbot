@@ -91,7 +91,7 @@ const Login = () => {
               Login
             </button>
           </form>
-          <span className="text-lg font-semibold text-bl border w-full">
+          <span className="text-lg font-semibold text-bl  w-full">
             Not registerd yet?{" "}
             <Link to="/register" className="text-blue-800 hover:text-blue-500">
               Create an Account
