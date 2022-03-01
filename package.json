@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd frontend &&  npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
