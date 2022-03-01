@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const connectToDatabase = async () => {
-  const connectionString = `mongodb+srv://Chatbot1:sushil@cluster0.zrsao.mongodb.net/chatbot?retryWrites=true&w=majority`;
+  const connectionString = process.env.DB_URL;
   try {
     await mongoose.connect(connectionString);
     console.log("Successfully connected to database");

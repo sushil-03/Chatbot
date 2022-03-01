@@ -17,7 +17,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5001/api/login", {
+      const response = await axios.post("/api/login", {
         student_id: id,
         password,
       });
@@ -86,19 +86,19 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className=" m-3 w-1/3 p-2 bg-blue-900 bg-opacity-100 text-white rounded-3xl hover:bg-blue-700 text-xl font-semibold"
+              className=" m-3 md:w-1/3 md:px-2 md:py-2 px-4 py-2 bg-blue-900 bg-opacity-100 text-white rounded-3xl hover:bg-blue-700 text-xl font-semibold"
             >
               Login
             </button>
           </form>
-          <span className="text-lg font-semibold text-bl">
+          <span className="text-lg font-semibold text-bl border w-full">
             Not registerd yet?{" "}
             <Link to="/register" className="text-blue-800 hover:text-blue-500">
               Create an Account
             </Link>
           </span>
         </div>
-        <div className="right w-1/2">
+        <div className=" md:block hidden right w-1/2">
           <div className="img w-full h-full"></div>
         </div>
       </div>

@@ -24,7 +24,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5001/api/register", {
+      const response = await axios.post("/api/register", {
         name,
         college,
         collegeEmailId,
@@ -41,7 +41,7 @@ const Register = () => {
         showChat((chat) => !chat);
       }
     } catch {
-      alert("Already has a id");
+      alert.error("Already has a id");
       showErr((err) => !err);
     }
   };
@@ -52,7 +52,7 @@ const Register = () => {
   }, [chat, navigate]);
   return (
     <div className="container1 w-screen h-screen  relative">
-      <div className="page flex flex-row w-4/5 h-4/5 m-auto absolute">
+      <div className="page flex flex-row w-4/5 h-4/5 m-auto absolute overflow-scroll">
         <div className="left w-full relative">
           <div className="icon">
             <IconContext.Provider value={{ color: "black", size: "4rem" }}>
@@ -61,8 +61,8 @@ const Register = () => {
           </div>
           <h2>Register</h2>
 
-          <form onSubmit={handleSubmit} className="m">
-            <div className="information py-8 flex flex-row flex-wrap justify-center gap-6 flex-grow">
+          <form onSubmit={handleSubmit} className="">
+            <div className="information py-8 flex flex-row flex-wrap justify-center md:gap-6 gap-3 overflow-scroll">
               <div className="name ">
                 <span className="text-sm font-semibold">Name*</span>
                 <Input
@@ -199,14 +199,14 @@ const Register = () => {
             <div className="btn flex justify-center items-center">
               <button
                 type="submit"
-                className=" w-1/3 p-2 bg-blue-900 bg-opacity-100 text-white rounded-3xl hover:bg-blue-700 text-xl font-semibold "
+                className=" md:w-1/3 md:p-2 px-4 py-3 bg-blue-900 bg-opacity-100 text-white rounded-3xl hover:bg-blue-700 text-xl font-semibold "
               >
                 Register
               </button>
             </div>
           </form>
           <div className="w-full  flex items-center justify-center flex-col ">
-            <p className="text-lg font-semibold text-bl my-4">
+            <p className="text-lg font-semibold text-bl my-4 px-2">
               Already have an Account?{" "}
               <Link to="/" className="text-blue-800 hover:text-blue-500">
                 Sign In
