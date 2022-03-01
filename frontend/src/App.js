@@ -10,7 +10,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Login />} />
           <Route path="/chatbot" element={<Chat />} />
-          <Route path="/Register" element={<Register />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </React.Fragment>
     </div>
