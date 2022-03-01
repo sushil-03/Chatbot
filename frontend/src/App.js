@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Chat from "./component/Chat";
 import Login from "./component/Login";
-import Register from "./component/Register";
+import Register from "./component/Register.js";
 function App() {
   return (
     <div>
