@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AiFillAliwangwang, AiOutlineCopyrightCircle } from "react-icons/ai";
+import { AiFillAliwangwang } from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../Common/Input";
@@ -11,7 +11,6 @@ const Login = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [chat, showChat] = useState(false);
-
   const [error, showErr] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -26,6 +25,8 @@ const Login = () => {
       if (response.data.success) {
         alert.success("User login successfully");
         showChat((chat) => !chat);
+      } else {
+        alert.error(response.data.message);
       }
     } catch {
       showErr((err) => !err);
@@ -41,7 +42,6 @@ const Login = () => {
     <div className="container1 w-screen h-screen  relative">
       <div className="page flex flex-row w-4/5 h-4/5 m-auto absolute">
         <div className="left w-1/2 relative">
-          {/* <IconContext.Provider value={{className=''}}> */}
           <div className="icon">
             <IconContext.Provider value={{ color: "black", size: "4rem" }}>
               <AiFillAliwangwang />
@@ -95,10 +95,6 @@ const Login = () => {
             <Link to="/register" className="text-blue-800 hover:text-blue-500">
               Create an Account
             </Link>
-          </span>
-          <span className="flex flex-row mx-14 absolute -bottom-0 items-center text-gray-500">
-            <AiOutlineCopyrightCircle />
-            All right reserved
           </span>
         </div>
         <div className="right w-1/2">

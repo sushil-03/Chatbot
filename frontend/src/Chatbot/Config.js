@@ -1,7 +1,4 @@
 import { createChatBotMessage } from "react-chatbot-kit";
-
-// widget
-
 import Contact from "../widget/Contact";
 import Details from "../widget/Details";
 import Id from "../widget/Id";

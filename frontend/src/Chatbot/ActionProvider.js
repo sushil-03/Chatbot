@@ -5,7 +5,6 @@ class ActionProvider {
     this.createClientMessage = createClientMessage;
   }
   handleOptions = () => {
-    console.log(" handleOptions");
     const message = this.createChatBotMessage(
       "How can I help you? Below are some possible options.",
       {
@@ -18,7 +17,6 @@ class ActionProvider {
   };
 
   handleAll = () => {
-    console.log("handleAll");
     const message = this.createChatBotMessage("Here are your all details", {
       widget: "details",
       loading: true,
@@ -28,7 +26,6 @@ class ActionProvider {
   };
 
   handleId = () => {
-    console.log("Handling id");
     const message = this.createChatBotMessage("Here is your student id", {
       widget: "id",
       loading: true,
@@ -37,7 +34,6 @@ class ActionProvider {
     this.addMessageToState(message);
   };
   handleRoll = () => {
-    console.log("Handling Roll");
     const message = this.createChatBotMessage(
       "Here is your student roll number",
       {
@@ -49,7 +45,6 @@ class ActionProvider {
     this.addMessageToState(message);
   };
   handleContact = () => {
-    console.log("Handling Contact");
     const message = this.createChatBotMessage("Here is your Contact Info", {
       widget: "contact",
       loading: true,
@@ -58,7 +53,6 @@ class ActionProvider {
     this.addMessageToState(message);
   };
   handleJoke = () => {
-    console.log("Handling Joke");
     const message = this.createChatBotMessage("Testing Joke", {
       widget: "joke",
       loading: true,
@@ -67,7 +61,6 @@ class ActionProvider {
     this.addMessageToState(message);
   };
   handleCollegeDetail = () => {
-    console.log("Handling College Detail");
     const message = this.createChatBotMessage("Here is your College Details", {
       widget: "college",
       loading: true,

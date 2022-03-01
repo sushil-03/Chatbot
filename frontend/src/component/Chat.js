@@ -5,7 +5,7 @@ import Config from "../Chatbot/Config";
 import MessageParser from "../Chatbot/MessageParser";
 import ActionProvider from "../Chatbot/ActionProvider";
 import Fade from "@material-ui/core/Fade";
-// import logo from "../component/test.gif";
+
 import { useAlert } from "react-alert";
 const Chat = () => {
   const alert = useAlert();
