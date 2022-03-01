@@ -23,22 +23,22 @@ const Chat = () => {
     <div className="p-4 chat w-screen h-screen overflow-hidden">
       {/* navbar */}
 
-      <div className="heading w-full flex flex-row justify-between  align items-center">
-        <div className="logo  text-6xl text-white m-3 font-redressed">
+      <div className="heading w-full flex flex-row justify-between  items-center">
+        <div className="logo  md:text-6xl text-4xl text-white md:m-3 my-3 font-redressed">
           <Link to="/" className="">
             chatbot.io
           </Link>
         </div>
-        <div className=" bot  text-3xl text-white m-3 font-roboto flex ">
+        <div className=" bot md:text-3xl text-2xl text-white  font-roboto flex mt-2 md:gap-5 gap-2">
           <p
             onClick={() => toggleBot((prev) => !prev)}
-            className="cursor-pointer"
+            className="cursor-pointer p-2 "
           >
             Get Details
           </p>
           <Link
             to="/"
-            className=" w-10 h-10  md:text-3xl  text-2xl mx-10 cursor-pointer"
+            className="pt-2 md:text-3xl  text-2xl cursor-pointer"
             onClick={() => {
               alert.success("Logging Out");
               navigate("/");
@@ -74,7 +74,7 @@ const Chat = () => {
             posed.
           </p>
         </div>
-        <div className="md:w-1/2 w-full right mx-5 ">
+        <div className="md:w-1/2 w-screen right mx-5 border">
           <div className="videoA  w-full h-full"></div>
         </div>
       </div>

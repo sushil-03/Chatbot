@@ -64,7 +64,7 @@ const Register = () => {
           <form onSubmit={handleSubmit} className="">
             <div className="information py-8 flex flex-row flex-wrap justify-center md:gap-6 gap-3 overflow-scroll">
               <div className="name ">
-                <span className="text-sm font-semibold">Name*</span>
+                <span className="">Name*</span>
                 <Input
                   type="text"
                   name=""
@@ -76,7 +76,7 @@ const Register = () => {
                 />
               </div>
               <div className="college ">
-                <span className="text-sm font-semibold">College*</span>
+                <span>College*</span>
                 <Input
                   value={college}
                   type="text"
@@ -89,7 +89,7 @@ const Register = () => {
               </div>
 
               <div className="college id">
-                <span className="text-sm font-semibold">College Email Id*</span>
+                <span>College Email Id*</span>
                 <Input
                   value={collegeEmailId}
                   type="email"
@@ -101,7 +101,7 @@ const Register = () => {
                 />
               </div>
               <div className="course">
-                <span className="text-sm font-semibold">Course*</span>
+                <span>Course*</span>
                 <Input
                   type="text"
                   name=""
@@ -113,7 +113,7 @@ const Register = () => {
                 />
               </div>
               <div className="branch">
-                <span className="text-sm font-semibold">Branch*</span>
+                <span>Branch*</span>
                 <Input
                   type="text"
                   name=""
@@ -126,7 +126,7 @@ const Register = () => {
               </div>
 
               <div className="id ">
-                <span className="text-sm font-semibold">Student Id*</span>
+                <span>Student Id*</span>
                 <Input
                   type="text"
                   name=""
@@ -144,7 +144,7 @@ const Register = () => {
                 )}
               </div>
               <div className="semester">
-                <span className="text-sm font-semibold">Semester*</span>
+                <span>Semester*</span>
                 <Input
                   type="text"
                   name=""
@@ -157,9 +157,7 @@ const Register = () => {
               </div>
               {/* gy */}
               <div className="rollNo">
-                <span className="text-sm font-semibold">
-                  University Roll Number*
-                </span>
+                <span>University Roll Number*</span>
                 <Input
                   type="text"
                   name=""
@@ -172,7 +170,7 @@ const Register = () => {
               </div>
 
               <div className="phone ">
-                <span className="text-sm font-semibold">Contact Info*</span>
+                <span>Contact Info*</span>
                 <Input
                   type="text"
                   name=""
@@ -184,7 +182,7 @@ const Register = () => {
                 />
               </div>
               <div className="password">
-                <span className="text-sm font-semibold">Password*</span>
+                <span>Password*</span>
                 <Input
                   type="text"
                   name=""
